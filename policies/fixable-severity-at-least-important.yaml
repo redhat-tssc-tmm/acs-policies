@@ -4,7 +4,7 @@ metadata:
   name: fixable-severity-at-least-important
   namespace: rhacs
 spec:
-  name: Fixable Severity at least Important
+  policyName: Fixable Severity at least Important
   description: Alert on deployments with fixable vulnerabilities with a Severity Rating
     at least Important
   rationale: Known vulnerabilities make it easier for adversaries to exploit your

@@ -4,7 +4,7 @@ metadata:
   name: secure-shell-ssh-port-exposed-in-image
   namespace: rhacs
 spec:
-  name: Secure Shell (ssh) Port Exposed in Image
+  policyName: Secure Shell (ssh) Port Exposed in Image
   description: Alert on deployments exposing port 22, commonly reserved for SSH access.
   rationale: Port 22 is reserved for SSH access. SSH should not typically be used
     within containers.

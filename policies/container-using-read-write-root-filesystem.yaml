@@ -4,7 +4,7 @@ metadata:
   name: container-using-read-write-root-filesystem
   namespace: rhacs
 spec:
-  name: Container using read-write root filesystem
+  policyName: Container using read-write root filesystem
   description: Alert on deployments with containers with read-write root filesystem
   rationale: Containers running with read-write root filesystem represent greater
     post-exploitation risk by allowing an attacker to modify important files in the
