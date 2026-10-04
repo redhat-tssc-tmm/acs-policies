@@ -20,7 +20,6 @@ spec:
   enforcementActions:
   - FAIL_BUILD_ENFORCEMENT
   disabled: false
-  policyVersion: '1.1'
   policySections:
   - sectionName: ''
     policyGroups:
