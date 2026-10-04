@@ -35,4 +35,4 @@ RHACS policy set.
 3. Set `spec.categories` to `["Parasol Secured Build Gate"]`
 4. Set `spec.lifecycleStages` to `["BUILD"]`
 5. Set `spec.enforcementActions` to `["FAIL_BUILD_ENFORCEMENT"]`
-6. Push to `module2` branch
+
