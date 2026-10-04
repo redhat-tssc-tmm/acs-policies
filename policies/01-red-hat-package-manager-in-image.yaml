@@ -4,7 +4,7 @@ metadata:
   name: red-hat-package-manager-in-image
   namespace: rhacs
 spec:
-  policyName: '05-Parasol: Red Hat Package Manager in Image'
+  policyName: '01-Parasol: Red Hat Package Manager in Image'
   description: Alert on deployments with components of the Red Hat/Fedora/CentOS package
     management system.
   rationale: Package managers make it easier for attackers to use compromised containers,
@@ -15,7 +15,7 @@ spec:
   - Parasol Secured Build Gate
   lifecycleStages:
   - BUILD
-  severity: LOW_SEVERITY
+  severity: MEDIUM_SEVERITY
   enforcementActions:
   - FAIL_BUILD_ENFORCEMENT
   disabled: false
