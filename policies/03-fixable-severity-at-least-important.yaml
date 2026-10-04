@@ -4,7 +4,7 @@ metadata:
   name: fixable-severity-at-least-important
   namespace: rhacs
 spec:
-  policyName: Fixable Severity at least Important
+  policyName: '03-Parasol: Fixable Severity at least Important'
   description: Alert on deployments with fixable vulnerabilities with a Severity Rating
     at least Important
   rationale: Known vulnerabilities make it easier for adversaries to exploit your

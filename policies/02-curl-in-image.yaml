@@ -4,7 +4,7 @@ metadata:
   name: curl-in-image
   namespace: rhacs
 spec:
-  policyName: Curl in Image
+  policyName: '02-Parasol: Curl in Image'
   description: Alert on deployments with curl present
   rationale: Leaving download tools like curl in an image makes it easier for attackers
     to use compromised containers, since they can easily download software.
