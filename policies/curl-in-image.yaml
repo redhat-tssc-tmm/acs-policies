@@ -1,0 +1,30 @@
+apiVersion: config.stackrox.io/v1alpha1
+kind: SecurityPolicy
+metadata:
+  name: curl-in-image
+  namespace: rhacs
+spec:
+  name: Curl in Image
+  description: Alert on deployments with curl present
+  rationale: Leaving download tools like curl in an image makes it easier for attackers
+    to use compromised containers, since they can easily download software.
+  remediation: Use your package manager's "remove", "purge" or "erase" command to
+    remove curl from the image build for production containers. Ensure that any configuration
+    files are also removed.
+  categories:
+  - Parasol Secured Build Gate
+  lifecycleStages:
+  - BUILD
+  severity: LOW_SEVERITY
+  enforcementActions:
+  - FAIL_BUILD_ENFORCEMENT
+  disabled: false
+  policyVersion: '1.1'
+  policySections:
+  - sectionName: ''
+    policyGroups:
+    - fieldName: Image Component
+      booleanOperator: OR
+      negate: false
+      values:
+      - value: curl=
