@@ -1,0 +1,30 @@
+apiVersion: config.stackrox.io/v1alpha1
+kind: SecurityPolicy
+metadata:
+  name: 05-parasol-netty-sni-bypass-mutual-tls-authentication-bypass-in-netty
+spec:
+  policyName: '05-Parasol: Netty SNI Bypass: Mutual TLS Authentication Bypass in Netty'
+  description: Alert on deployments with images containing Netty components that are susceptible to a mutual TLS (mTLS) bypass through SNI handling.
+  rationale: A flaw in Netty's SslClientHelloHandler reads the TLS handshake header at the wrong offset. A ClientHello whose header spans multiple TLS records causes Netty to fall back to the default SslContext instead of the SNI-specific one. If per-SNI client certificate authentication is the only mTLS gate and the default context does not require client certificates, an unauthenticated remote attacker can bypass mutual TLS on protected routes.
+  remediation: Upgrade Netty to 4.1.137.Final, 4.2.17.Final, or later. Alternatively, upgrade the affected images to versions that include the fixed Netty release.
+  categories:
+    - Parasol Secured Build Gate
+  lifecycleStages:
+    - BUILD
+  eventSource: NOT_APPLICABLE
+  severity: CRITICAL_SEVERITY
+  enforcementActions:
+  - FAIL_BUILD_ENFORCEMENT
+  policySections:
+    - policyGroups:
+        - fieldName: CVE
+          booleanOperator: OR
+          values:
+            - value: CVE-2026-75595
+  mitreAttackVectors:
+    - tactic: TA0001
+      techniques:
+        - T1190
+  criteriaLocked: false
+  mitreVectorsLocked: false
+  isDefault: false
