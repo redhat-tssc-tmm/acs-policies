@@ -15,7 +15,7 @@ spec:
   - Parasol Secured Build Gate
   lifecycleStages:
   - BUILD
-  severity: MEDIUM_SEVERITY
+  severity: HIGH_SEVERITY
   enforcementActions:
   - FAIL_BUILD_ENFORCEMENT
   disabled: false
