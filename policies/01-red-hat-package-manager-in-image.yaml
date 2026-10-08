@@ -10,7 +10,7 @@ spec:
   rationale: Package managers make it easier for attackers to use compromised containers,
     since they can easily add software.
   remediation: Run `rpm -e --nodeps $(rpm -qa '*rpm*' '*dnf*' '*libsolv*' '*hawkey*'
-    'yum*')` in the image build for production containers.
+    'yum*')` in the image build for production containers or use a distroless or Red Hat Hardened base image.
   categories:
   - Parasol Secured Build Gate
   lifecycleStages:
